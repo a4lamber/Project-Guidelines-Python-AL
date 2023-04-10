@@ -8,10 +8,16 @@ Table of contents:
 - [Project Guidelines](#project-guidelines)
 - [Initiative](#initiative)
 - [Overview](#overview)
-  - [What's out there?](#whats-out-there)
-  - [Roadmap](#roadmap)
+	- [What's out there?](#whats-out-there)
+	- [Roadmap](#roadmap)
 - [Develop](#develop)
-  - [Environments](#environments)
+	- [Environments](#environments)
+	- [code style](#code-style)
+		- [Docstring](#docstring)
+		- [Comment](#comment)
+		- [Naming in Python](#naming-in-python)
+			- [Naming Conventions](#naming-conventions)
+	- [git](#git)
 - [Reference](#reference)
 
 
@@ -51,12 +57,15 @@ Therefore, the scope of the current project guideline is within the scope of tea
 
 # Overview
 
+In this section, some review has been done on methodologies widely implemented in software and manufacturing companies.
+
 ## What's out there?
 
 There are many ways of software development methodology that you probably heard of:
-- DevOps
-- agile development
-- Scrum
+- DevOps (a set of best practices)
+- agile (abstract)
+  - Scrum (methodology 1)
+  - Kanban (methodology 2)
 
 The general DevOps workflow is illustrated in the figure below
 
@@ -132,21 +141,137 @@ flowchart LR
 In this section, I will cover
 - [ ] environments
 - [ ] code style
-- [ ] structure and naming
+- [ ] git for version control
 
 ## Environments
 
-The very first thing when you start
+Before starting a project, one of the first thing you should be doing is to set up an environment. After this section, you will understand
+- why do we need to set up an environment for both personal use and team use?
+- what's out there for python
+  - conda
+  - pyenv
+  - pip
+  - pipenv
 
 
 
 
 
+## code style
+
+In this section, the following topic will be discussed:
+- Docstring
+- Naming in Python
+- Error handling
+
+
+### Docstring
+
+Docstring is one of the most important thing when writing a script in python. The general goal for the docstring is that `give enough information to write a call to the function without reading the functions'.
+
+```python
+def calculate_sum(n1, n2):
+    """
+    Calculates the sum of two numbers.
+
+    Args:
+        n1 (int): The first number.
+        n2 (int): The second number.
+
+    Returns:
+        int: The sum of the two numbers.
+    """
+    return n1 + n2
+```
+
+
+
+
+### Comment
+
+Typically, you can use
+- `inline comment`
+- `block comment`
+
+Use block comment for explaining something complicated
+```python
+# for block comment
+
+# Calculate the NDVI based on   
+# red and NIR band 
+# NDVI = (NIR - Red)/(NIR + RED)
+```
+
+> Writing comment is tricky but rule number one for writing comment is NEVER DESCRIBE TO CODE. 
+
+
+```python
+# Bad comment
+
+# Now we iterate throught the array. 
+```
+
+### Naming in Python
+
+
+High level understanding of different naming convention
+
+|schema|description|example|
+|-|-|-|
+|raw|-|`user login count`|
+|camel case|-|`userLoginCount = 1`|
+|Pascal case|-|`UserLoginCount = 1`|
+|Snake case|-|`user_login_count` for variable or `USER_LOGIN_COUNT` for constant|
+|Kebab case|-|`user-login-count`|
+
+> There is no best naming convention. Just need to be consistent within the team. And also in line with what's the most generally adopted convention.
+
+
+
+
+
+
+
+#### Naming Conventions
+
+> Rule # 1 for naming convention: NEVER ABBREVIATE.
+
+- avoid single character names
+  - counters or iterators (`i`, `j`)
+  - `f` as a file handle and `e` for example
+
+```python
+bands = ["red", "nir","blue", "green"]
+
+# not preferred
+for i in bands:
+    pass
+
+# prefered
+for band in bands:
+	pass  
+```
+
+Check the table below for useful naming convention for functional programming in Python
+
+
+|Type|Public|
+|-|-|
+|package and modules|lower_with_under|
+|function/methods|lower_with_under|
+|Except|CapWords|
+|constant|CAPS_WITH_UNDER|
+|local variable|lower_with_under|
+
+
+
+
+## git
 
 
 
 
 # Reference
 - [project guideline for javascript projects, what serves as a good material for the guideline i am proposing](https://github.com/elsewhencode/project-guidelines)
-- [pylint](https://archive.mantidproject.org/How_to_run_Pylint)
-- [google python style guide](https://google.github.io/styleguide/pyguide.html)
+- [pylint documentation](https://archive.mantidproject.org/How_to_run_Pylint)
+- [google python style guide for python](https://google.github.io/styleguide/pyguide.html)
