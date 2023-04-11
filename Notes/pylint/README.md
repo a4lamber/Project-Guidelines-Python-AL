@@ -55,6 +55,7 @@ Pylint will search in the following category
     - [output control](#output-control)
   - [Practionality (updating)](#practionality-updating)
   - [Reference](#reference)
+- [Exercises](#exercises)
 
 
 |Symbol|Type|Desctiption|
@@ -127,3 +128,9 @@ Some reference to learn more about `pylint`
 - [Real-Python pylint video tutorial](https://www.youtube.com/watch?v=fFY5103p5-c)
   - 17 mins video for basic intro of `pylint`
 
+
+# Exercises
+
+After the tutorial and demo, you should have grasped `pylint`. To bettwe incorporate into your workflow. Some exercises:
+- run `pylint` on your previous code to get familiar with what it means
+- try improve the scores by changing some of the messages (convention etc)
