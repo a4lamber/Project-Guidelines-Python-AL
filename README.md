@@ -8,16 +8,17 @@ Table of contents:
 - [Project Guidelines](#project-guidelines)
 - [Initiative](#initiative)
 - [Overview](#overview)
-	- [What's out there?](#whats-out-there)
-	- [Roadmap](#roadmap)
+  - [What's out there?](#whats-out-there)
+- [Roadmap](#roadmap)
+- [pylint](#pylint)
 - [Develop](#develop)
-	- [Environments](#environments)
-	- [code style](#code-style)
-		- [Docstring](#docstring)
-		- [Comment](#comment)
-		- [Naming in Python](#naming-in-python)
-			- [Naming Conventions](#naming-conventions)
-	- [git](#git)
+  - [Environments](#environments)
+  - [code style](#code-style)
+    - [Docstring](#docstring)
+    - [Comment](#comment)
+    - [Naming in Python](#naming-in-python)
+      - [Naming Conventions](#naming-conventions)
+  - [git](#git)
 - [Reference](#reference)
 
 
@@ -85,7 +86,7 @@ It basically consists of serveral sprint (multiple variation of the cycle) in or
 
 In the next section, I will list a workflow for software development methdology for small-scale team like our team. It will be a simplified version of agile.
 
-## Roadmap
+# Roadmap
 
 If we tailor the software development methodology to our team's needs (agile based), it would look like the following diagram but my current focus will be on design, develop and test.
 
@@ -111,6 +112,19 @@ flowchart LR
     review --> launch
 ```
 
+Some of things, we will cover in this sections are listed in the table below
+
+# pylint
+
+
+
+```bash
+# parsable format for reports
+pylint --output-format=parseable pi_start_01182023.py
+
+# nice little format
+pylint --output-format=parseable --reports y pi_start_01182023.py
+```
 
 # Develop
 
